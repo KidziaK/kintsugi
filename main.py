@@ -13,8 +13,7 @@ def molecular_structure_from_smiles(smiles: str) -> gto.Mole:
     mol_rdkit = Chem.AddHs(mol_rdkit)
     AllChem.EmbedMolecule(mol_rdkit, AllChem.ETKDG())
     AllChem.MMFFOptimizeMolecule(mol_rdkit)
-    atoms = [[atom.GetSymbol(), mol_rdkit.GetConformer().GetAtomPosition(atom.GetIdx())] for atom in
-             mol_rdkit.GetAtoms()]
+    atoms = [[a.GetSymbol(), mol_rdkit.GetConformer().GetAtomPosition(a.GetIdx())] for a in mol_rdkit.GetAtoms()]
     mol_pyscf = gto.Mole(atom=atoms, basis="6-31g*").build()
     return mol_pyscf
 
