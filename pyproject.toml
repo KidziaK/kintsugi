@@ -1,0 +1,13 @@
+[project]
+name = "kintsugi"
+version = "0.1.0"
+description = "I will miss you"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=2.3.1",
+    "pyscf>=2.9.0",
+    "rdkit>=2025.3.3",
+    "scikit-image>=0.25.2",
+    "scikit-learn>=1.7.0",
+]
